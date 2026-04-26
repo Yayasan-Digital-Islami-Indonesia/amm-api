@@ -27,11 +27,16 @@ Sistem ini dibagi menjadi beberapa domain mandiri (Vertical Slices):
 - **Security:** JWT for Authentication & RBAC
 
 
-📁 Project Structure
+## 📁 Project Structure
 ```
 ├── cmd/api/main.go            # Entry point & Dependency Injection
 ├── internal/
 │   ├── member/                # Domain: Jamaah & Pengurus
+│   │   ├── delivery/
+│   │   │   └── http/          # HTTP Handler/Controller
+│   │   ├── entity/            # Model
+│   │   ├── repository/        # Implementasi Database
+│   │   └── usecase/           # Aplication Logic
 │   ├── finance/               # Domain: Infaq, Kas, QRIS
 │   ├── synergy/               # Domain: Inter-masjid Aid (Core)
 │   ├── social/                # Domain: Zakat & Qurban
