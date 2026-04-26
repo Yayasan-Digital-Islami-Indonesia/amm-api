@@ -4,16 +4,20 @@ Sistem manajemen masjid terintegrasi yang dibangun menggunakan Clean Architectur
 ## 🕌 Domain & Bounded Contexts
 Sistem ini dibagi menjadi beberapa domain mandiri (Vertical Slices):
 
->**🏃SEDANG DIKERJAKAN (ACTIVE)**
-1. Member (Anggota): Manajemen identitas Jamaah dan struktur Pengurus Masjid (DKM).
-2. Finance (Keuangan): Manajemen Infaq, Kas Masjid, integrasi QRIS Syariah, dan Laporan Publik.
+> **🏃 SEDANG DIKERJAKAN (ACTIVE)**
+>
+> 1. Member (Anggota): Manajemen identitas Jamaah dan struktur Pengurus Masjid (DKM).
+> 2. Finance (Keuangan): Manajemen Infaq, Kas Masjid, integrasi QRIS Syariah, dan Laporan Publik.
+
 <br>
-<br>
+
 > **📅 RENCANA KE DEPAN (PLANNING)**
-3. Synergy (Sinergi): Modul Core untuk distribusi bantuan antar-masjid (pembangunan/kegiatan) secara digital.
-4. Social (Ziswaf): Statistik distribusi Zakat dan manajemen pendaftaran/pembagian Qurban.
-5. Event (Agenda): Pengurusan jadwal Shalat Jumat, penugasan Imam/Khatib, dan acara keagamaan lainnya.
-6. Asset (Inventaris): Pendataan aset dan inventaris milik masjid.
+>
+> 3. Synergy (Sinergi): Modul Core untuk distribusi bantuan antar-masjid (pembangunan/kegiatan) secara digital.
+> 4. Social (Ziswaf): Statistik distribusi Zakat dan manajemen pendaftaran/pembagian Qurban.
+> 5. Event (Agenda): Pengurusan jadwal Shalat Jumat, penugasan Imam/Khatib, dan acara keagamaan lainnya.
+> 6. Asset (Inventaris): Pendataan aset dan inventaris milik masjid.
+
 
 ## 🏗️ Tech Stack
 - **Language:** Go (Golang) 1.25+
@@ -24,8 +28,7 @@ Sistem ini dibagi menjadi beberapa domain mandiri (Vertical Slices):
 
 
 📁 Project Structure
-text
-
+```
 ├── cmd/api/main.go            # Entry point & Dependency Injection
 ├── internal/
 │   ├── member/                # Domain: Jamaah & Pengurus
@@ -36,32 +39,37 @@ text
 │   ├── asset/                 # Domain: Inventaris
 │   └── shared/                # Kernel: Utility (Prayer Times), Config, DB, Response
 ├── pkg/                       # Helper libraries (Logger, Validator)
-└── scripts/                   # Database migrations & seeds
+└── migrations/                   # Database migrations & seeds
+```
 
-Gunakan kode dengan hati-hati.
-🛠️ Getting Started
-1. Prasyarat
+## 🛠️ Getting Started
 
-    Go 1.21 ke atas
-    PostgreSQL
-    Docker (opsional)
+### 1. Prasyarat
+Pastikan Anda sudah menginstal perangkat lunak berikut:
+- **Go** (versi 1.21 ke atas)
+- **PostgreSQL**
 
-2. Instalasi
-bash
+### 2. Instalasi
+Ikuti langkah-langkah berikut untuk menyiapkan proyek di lokal:
 
+```bash
 # Clone repository
-git clone https://github.com
+git clone https://github.com/Yayasan-Digital-Islami-Indonesia/amm-api.git
+cd amm-api
 
 # Install dependencies
 go mod tidy
 
 # Setup environment
 cp .env.example .env
+```
+> **Catatan:** Setelah menyalin `.env`, pastikan untuk menyesuaikan konfigurasi database Anda.
 
-Gunakan kode dengan hati-hati.
-3. Running
-bash
+### 3. Menjalankan Aplikasi
+Gunakan perintah berikut untuk menjalankan server:
 
+```bash
 go run cmd/api/main.go
+```
 
-Gunakan kode dengan hati-hati.
+
